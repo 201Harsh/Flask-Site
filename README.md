@@ -20,7 +20,7 @@ Make sure you have Python installed, then install the required dependencies usin
 ```bash
 pip install -r requirements.txt
 
-git clone https://github.com/your_username/your_repository.git
+git clone https://github.com/201Harsh/Flask-Site.git
 cd your_repository
 
 python -m venv venv
