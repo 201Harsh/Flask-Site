@@ -1,6 +1,5 @@
 # Flask-Site
 ThIs is My Flask Site
-the link is for tool is https://github.com/201Harsh/Flask-Site.git
 
 
 # Flask Web Application
