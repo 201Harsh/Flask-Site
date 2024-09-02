@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="navbar">
+            <div class="logo"><a href="/">MyShop</a></div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="cart">
+        <h2>Your Shopping Cart</h2>
+        <div class="cart-items">
+            <!-- This section dynamically generates cart items using Flask -->
+            {% for order in orders %}
+            <div class="cart-item">
+                <p>Product ID: {{ order.product_id }}</p>
+                <p>Quantity: {{ order.quantity }}</p>
+                <p>Price: $<span class="price">{{ order.total_price }}</span></p>
+                <form action="/remove_from_cart" method="POST">
+                    <input type="hidden" name="order_id" value="{{ order.id }}">
+                    <button type="submit" class="remove-from-cart">Remove</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Button to proceed to payment (vulnerable, as price manipulation is possible) -->
+        <div class="checkout">
+            <a href="/checkout" class="btn checkout-btn">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <script src="/static/cart.js"></script>
+</body>
+</html>
