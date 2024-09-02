@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 python3 app.py
 
-
+```
 This `README.md` provides an overview of the project, instructions for installation, configuration, and running the application, as well as other standard sections like license and contributing guidelines. Let me know if you'd like to adjust any details!
 
 
